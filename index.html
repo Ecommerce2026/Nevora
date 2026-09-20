@@ -13,16 +13,28 @@
 </head>
 <body>
 
+<a href="#top" class="skip-link">Skip to content</a>
+
 <!-- Scroll progress indicator -->
 <div class="progress-bar" id="progressBar"></div>
 
 <!-- Rotating brand statement strip -->
 <div class="topbar">
+  <!-- Two identical sets so the track can scroll exactly one set width and loop
+       seamlessly without ever running empty. Keep both in sync if the copy changes. -->
   <div class="topbar__track" id="topbarTrack">
-    <span>Calidad Suiza, Producción Colombiana</span>
-    <span>Traceable From Farm to Bar</span>
-    <span>Small-Batch. 100% Colombian Cacao.</span>
-    <span>Crafted by Nature, Perfected by Tradition</span>
+    <div class="topbar__set">
+      <span>Calidad Suiza, Producción Colombiana</span>
+      <span>Traceable From Farm to Bar</span>
+      <span>Small-Batch. 100% Colombian Cacao.</span>
+      <span>Crafted by Nature, Perfected by Tradition</span>
+    </div>
+    <div class="topbar__set" aria-hidden="true">
+      <span>Calidad Suiza, Producción Colombiana</span>
+      <span>Traceable From Farm to Bar</span>
+      <span>Small-Batch. 100% Colombian Cacao.</span>
+      <span>Crafted by Nature, Perfected by Tradition</span>
+    </div>
   </div>
 </div>
 
@@ -30,8 +42,8 @@
 <header class="nav" id="siteNav">
   <div class="nav__inner">
     <a href="#top" class="nav__logo" aria-label="NEVORA home">
-      <img src="logo.png" alt="NEVORA" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';">
-      <span class="nav__logo-fallback">NEVORA</span>
+      <img src="logo-white.png" alt="" onerror="this.remove();">
+      <span class="nav__logo-word">NEVORA</span>
     </a>
 
     <nav class="nav__links" aria-label="Primary">
@@ -39,6 +51,8 @@
       <a href="#chocolate">Chocolate</a>
       <a href="#traceability">Traceability</a>
       <a href="#subscribe">Subscription</a>
+      <a href="#experience">Gifting</a>
+      <a href="#warranty">Our Promise</a>
       <a href="#faq">FAQ</a>
     </nav>
 
@@ -61,12 +75,13 @@
     <a href="#traceability">Traceability</a>
     <a href="#subscribe">Subscription</a>
     <a href="#experience">Gifting &amp; Events</a>
+    <a href="#warranty">Our Promise</a>
     <a href="#faq">FAQ</a>
     <a href="#chocolate" class="button button--primary">Shop NEVORA</a>
   </div>
 </header>
 
-<main id="top">
+<main id="top" tabindex="-1">
 
   <!-- ============ HERO ============ -->
   <section class="hero">
@@ -75,12 +90,16 @@
       <div class="hero__overlay"></div>
     </div>
     <div class="hero__content reveal">
-      <p class="eyebrow eyebrow--light">Swiss Quality, Colombian Production</p>
-      <h1>Crafted by Nature.<br>Perfected by Tradition.</h1>
-      <p class="hero__lead">NEVORA blends carefully selected Colombian cacao with Swiss-inspired chocolate craftsmanship — turning every bar into a traceable, single-origin discovery experience.</p>
-      <div class="hero__actions">
-        <a href="#chocolate" class="button button--primary">Shop NEVORA</a>
-        <a href="#story" class="button button--ghost">Discover Our Story</a>
+      <!-- Copy sits in the right half so it never lands on the packshot, which
+           the hero photo keeps in the left third. -->
+      <div class="hero__copy">
+        <p class="eyebrow eyebrow--light">Swiss Quality, Colombian Production</p>
+        <h1>Crafted by Nature.<br>Perfected by Tradition.</h1>
+        <p class="hero__lead">NEVORA blends carefully selected Colombian cacao with Swiss-inspired chocolate craftsmanship, turning every bar into a traceable, single-origin discovery experience.</p>
+        <div class="hero__actions">
+          <a href="#chocolate" class="button button--primary">Shop NEVORA</a>
+          <a href="#story" class="button button--ghost">Discover Our Story</a>
+        </div>
       </div>
     </div>
     <a href="#stats" class="hero__scroll" aria-label="Scroll to explore">
@@ -127,7 +146,7 @@
         <p class="eyebrow">Our Story</p>
         <h2>Two Origins, One Craft.</h2>
         <p>NEVORA was founded on a simple belief: the world's finest cacao deserves the world's finest craftsmanship. We source directly from Colombian farmers and cooperatives, then shape every bar with the precision and restraint of Swiss-inspired chocolate-making.</p>
-        <p>Where most chocolate hides its origin behind a wrapper, NEVORA puts it front and center — the region, the farmer, the process. It's not just another chocolate bar. It's a chocolate discovery experience.</p>
+        <p>Where most chocolate hides its origin behind a wrapper, NEVORA puts it front and center: the region, the farmer, the process. It's not just another chocolate bar. It's a chocolate discovery experience.</p>
         <a href="#traceability" class="link-arrow">See how traceability works →</a>
       </div>
     </div>
@@ -143,7 +162,7 @@
       <div class="pillar reveal">
         <span class="pillar__num">01</span>
         <h3>Transparent Sourcing</h3>
-        <p>Every bar is traceable to the region, farm and farmer behind the cacao — no anonymous ingredients, no shortcuts.</p>
+        <p>Every bar is traceable to the region, farm and farmer behind the cacao. No anonymous ingredients, no shortcuts.</p>
       </div>
       <div class="pillar reveal">
         <span class="pillar__num">02</span>
@@ -179,12 +198,12 @@
         <div class="media flavors__media">
           <div class="media-placeholder">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 16-4.5-4.5a2 2 0 0 0-2.8 0L5 20"/></svg>
-            <span class="media-placeholder__file" id="flavorPlaceholderFile">image-4.jpg</span>
-            <span class="media-placeholder__desc" id="flavorPlaceholderDesc">NEVORA Signature — classic Swiss-style milk chocolate bar</span>
+            <span class="media-placeholder__file" id="flavorPlaceholderFile">milk-cocolate.png</span>
+            <span class="media-placeholder__desc" id="flavorPlaceholderDesc">NEVORA Signature, classic Swiss-style milk chocolate bar</span>
           </div>
-          <img src="image-4.jpg" alt="NEVORA Signature classic Swiss-style milk chocolate bar" data-flavor-image="signature" data-media-image class="is-active">
-          <img src="image-5.png" alt="NEVORA Intense — 70% Colombian dark chocolate bar and packaging" data-flavor-image="intense" data-media-image>
-          <img src="image-6.jpg" alt="NEVORA Origin coffee and sea salt chocolate bar" data-flavor-image="origin" data-media-image>
+          <img src="milk-cocolate.png" alt="NEVORA Signature, 40% cocoa milk chocolate bar in its light blue wrapper" data-flavor-image="signature" data-media-image class="is-active">
+          <img src="image-5.png" alt="NEVORA Intense, 70% Colombian dark chocolate bar and packaging" data-flavor-image="intense" data-media-image>
+          <img src="sea%20salt%20choco.png" alt="NEVORA Origin, 70% cocoa dark chocolate bar topped with sea salt crystals" data-flavor-image="origin" data-media-image>
           <span class="flavors__tag" data-flavor-tag="signature">Milk · Classic</span>
           <span class="flavors__tag" data-flavor-tag="intense">70% Dark</span>
           <span class="flavors__tag" data-flavor-tag="origin">Coffee &amp; Sea Salt</span>
@@ -195,14 +214,14 @@
           <article class="flavor-card is-active" data-flavor-content="signature">
             <h3>Signature</h3>
             <p class="flavor-card__subtitle">Classic Swiss-Style Milk Chocolate</p>
-            <p>A smooth, comforting milk chocolate inspired by traditional Swiss-style craftsmanship — the everyday bar made extraordinary by Colombian cacao.</p>
+            <p>A smooth, comforting milk chocolate inspired by traditional Swiss-style craftsmanship. The everyday bar made extraordinary by Colombian cacao.</p>
             <ul class="flavor-card__notes">
               <li>Colombian milk cacao</li>
               <li>Silky, slow-melt texture</li>
               <li>Notes of caramel &amp; warm milk</li>
             </ul>
             <div class="flavor-card__buy">
-              <span class="flavor-card__price">COP $27,900 <small>/ 80g</small></span>
+              <span class="flavor-card__price">COP $18,500 <small>/ 80g</small></span>
               <button class="button button--primary" data-add-to-bag="Signature">Add to Bag</button>
             </div>
           </article>
@@ -210,14 +229,14 @@
           <article class="flavor-card" data-flavor-content="intense">
             <h3>Intense</h3>
             <p class="flavor-card__subtitle">70% Colombian Dark Chocolate</p>
-            <p>A bold, high-cacao dark chocolate built around the natural flavor and quality of Colombian cacao — for those who want the origin to speak for itself.</p>
+            <p>A bold, high-cacao dark chocolate built around the natural flavor and quality of Colombian cacao, for those who want the origin to speak for itself.</p>
             <ul class="flavor-card__notes">
               <li>70% Colombian dark cacao</li>
               <li>Deep, fruit-forward profile</li>
               <li>Subtle bitterness, clean finish</li>
             </ul>
             <div class="flavor-card__buy">
-              <span class="flavor-card__price">COP $27,900 <small>/ 80g</small></span>
+              <span class="flavor-card__price">COP $18,500 <small>/ 80g</small></span>
               <button class="button button--primary" data-add-to-bag="Intense">Add to Bag</button>
             </div>
           </article>
@@ -225,21 +244,21 @@
           <article class="flavor-card" data-flavor-content="origin">
             <h3>Origin</h3>
             <p class="flavor-card__subtitle">Coffee &amp; Sea Salt Chocolate</p>
-            <p>A Colombian-inspired pairing of dark cacao, roasted coffee and sea salt — our most distinctive bar, built for chocolate explorers.</p>
+            <p>A Colombian-inspired pairing of dark cacao, roasted coffee and sea salt. Our most distinctive bar, built for chocolate explorers.</p>
             <ul class="flavor-card__notes">
               <li>Dark cacao base</li>
               <li>Colombian coffee infusion</li>
               <li>Finished with sea salt crystals</li>
             </ul>
             <div class="flavor-card__buy">
-              <span class="flavor-card__price">COP $27,900 <small>/ 80g</small></span>
+              <span class="flavor-card__price">COP $18,500 <small>/ 80g</small></span>
               <button class="button button--primary" data-add-to-bag="Origin">Add to Bag</button>
             </div>
           </article>
 
         </div>
       </div>
-      <p class="flavors__note">Pricing shown reflects our founding design concept and may be refined before launch.</p>
+      <p class="flavors__note">One price for every bar. Shipping is calculated at checkout. Pricing reflects our founding design concept and may be refined before launch.</p>
     </div>
   </section>
 
@@ -250,33 +269,72 @@
       <h2>Scan the wrapper. Meet the farm.</h2>
       <p class="section-lead">Every NEVORA bar carries a QR code that connects you directly to the story behind your chocolate.</p>
     </div>
-    <div class="traceability__product reveal">
-      <div class="media traceability__media">
+    <!-- The packshot shows the front of the bar; the code itself is printed on the
+         back, so it gets its own card here rather than being claimed on a photo
+         that does not show it. The record is demo data for the prototype. -->
+    <div class="trace-showcase reveal">
+      <div class="media trace-showcase__pack">
         <div class="media-placeholder">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 16-4.5-4.5a2 2 0 0 0-2.8 0L5 20"/></svg>
           <span class="media-placeholder__file">image-3.png</span>
-          <span class="media-placeholder__desc">NEVORA wrapper with QR code, ready to scan</span>
+          <span class="media-placeholder__desc">NEVORA bar and wrapper, front of pack</span>
         </div>
-        <img src="image-3.png" alt="NEVORA chocolate bar and wrapper — the QR traceability code appears on every pack" data-media-image>
+        <img src="image-3.png" alt="NEVORA chocolate bar standing beside its wrapper" data-media-image>
       </div>
+
+      <figure class="trace-card">
+        <div class="trace-card__code">
+          <img src="qr-trace.svg" alt="QR code printed on the back of every NEVORA wrapper" width="140" height="140" loading="lazy">
+        </div>
+        <figcaption class="trace-card__body">
+          <p class="trace-card__label">Batch CO-SAN-2026-0418</p>
+          <h3>Santander, Colombia</h3>
+          <dl class="trace-card__facts">
+            <div><dt>Cooperative</dt><dd>Asoprocasan</dd></div>
+            <div><dt>Farmer</dt><dd>Familia Ortega</dd></div>
+            <div><dt>Harvest</dt><dd>March 2026</dd></div>
+            <div><dt>Cacao</dt><dd>Criollo &amp; Trinitario</dd></div>
+          </dl>
+          <p class="trace-card__note">Sample record. The code on your own bar opens the batch that bar came from.</p>
+        </figcaption>
+      </figure>
     </div>
     <div class="steps">
       <div class="step reveal">
-        <span class="step__num">01</span>
-        <h3>Scan</h3>
-        <p>Find the QR code on every NEVORA wrapper and scan it with your phone.</p>
+        <div class="step__card">
+          <span class="step__num">01</span>
+          <span class="step__badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14h1v1M14 20h1v1M20 18v3h-3"/></svg>
+          </span>
+          <h3>Scan</h3>
+          <p>Find the QR code on every NEVORA wrapper and scan it with your phone.</p>
+        </div>
       </div>
-      <div class="step__connector reveal" aria-hidden="true"></div>
-      <div class="step reveal">
-        <span class="step__num">02</span>
-        <h3>Discover</h3>
-        <p>Meet the region, the cooperative and the farmer who grew your cacao.</p>
+      <div class="step__arrow reveal" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
       </div>
-      <div class="step__connector reveal" aria-hidden="true"></div>
       <div class="step reveal">
-        <span class="step__num">03</span>
-        <h3>Taste</h3>
-        <p>Enjoy your bar knowing exactly where it came from — origin you can taste.</p>
+        <div class="step__card">
+          <span class="step__num">02</span>
+          <span class="step__badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+          </span>
+          <h3>Discover</h3>
+          <p>Meet the region, the cooperative and the farmer who grew your cacao.</p>
+        </div>
+      </div>
+      <div class="step__arrow reveal" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+      </div>
+      <div class="step reveal">
+        <div class="step__card">
+          <span class="step__num">03</span>
+          <span class="step__badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 3h16l-1 12H5L4 3Z"/><path d="M9 15v3a3 3 0 0 0 6 0v-3"/></svg>
+          </span>
+          <h3>Taste</h3>
+          <p>Enjoy your bar knowing exactly where it came from. Origin you can taste.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -285,66 +343,112 @@
   <section class="subscribe" id="subscribe">
     <div class="subscribe__grid">
       <div class="subscribe__content reveal">
-        <p class="eyebrow eyebrow--light">Subscription</p>
+        <p class="eyebrow eyebrow--light">Coming Soon</p>
         <h2 class="light">Chocolate discovery, delivered.</h2>
-        <p>Join the NEVORA Discovery Club and receive our latest flavors, limited editions and single-origin releases at your door.</p>
+        <p>The NEVORA Discovery Club will bring our latest flavors, limited editions and single-origin releases to your door. We are launching with our three bars first. The Club opens once we know which origins you want next.</p>
 
-        <div class="toggle" role="tablist" aria-label="Billing frequency">
-          <button class="toggle__option is-active" data-plan="monthly">Monthly</button>
-          <button class="toggle__option" data-plan="quarterly">Quarterly <span class="toggle__badge">Save 15%</span></button>
-        </div>
-
-        <div class="plan-price">
-          <span class="plan-price__amount" data-price-monthly="COP $74,900" data-price-quarterly="COP $190,900">COP $74,900</span>
-          <span class="plan-price__period" data-period-monthly="/ month" data-period-quarterly="/ every 3 months">/ month</span>
-        </div>
         <ul class="plan-list">
-          <li>3 signature bars per delivery</li>
+          <li>Three bars per delivery</li>
           <li>Early access to limited editions</li>
-          <li>Free shipping across Colombia</li>
-          <li>Pause or cancel anytime</li>
+          <li>New single-origin releases first</li>
         </ul>
-        <button class="button button--primary" id="subscribeBtn">Start Your Subscription</button>
-        <p class="flavors__note">Subscription pricing is illustrative during our founding phase.</p>
+        <button class="button button--primary" id="subscribeBtn">See the Collection</button>
+        <p class="flavors__note">Not open yet. Every bar is available individually at COP $18,500.</p>
       </div>
       <div class="subscribe__media reveal">
         <div class="media">
           <div class="media-placeholder">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 16-4.5-4.5a2 2 0 0 0-2.8 0L5 20"/></svg>
             <span class="media-placeholder__file">image-7.jpg</span>
-            <span class="media-placeholder__desc">NEVORA chocolate subscription box with three flavors</span>
+            <span class="media-placeholder__desc">NEVORA Signature, Intense and Origin bars on stone pedestals with Colombian cacao beans, coffee beans and sea salt</span>
           </div>
-          <img src="image-7.jpg" alt="NEVORA chocolate subscription box with three flavors" data-media-image>
+          <img src="image-7.jpg" alt="NEVORA Signature, Intense and Origin bars on stone pedestals with Colombian cacao beans, coffee beans and sea salt" data-media-image>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============ GIFTING / B2B EXPERIENCE ============ -->
+  <!-- Card photography: Pexels (free licence, no attribution required).
+       image-12.jpg pexels.com/photo/34769301 image-10.jpg pexels.com/photo/5486837
+       image-11.jpg pexels.com/photo/29098395. Swap for NEVORA's own shots before launch. -->
   <section class="experience" id="experience">
     <div class="section-head reveal">
       <p class="eyebrow">Beyond the Bar</p>
       <h2>More ways to experience NEVORA.</h2>
+      <p class="section-lead">The same Colombian cacao, built around your occasion, whether that is a gift, a client relationship or an afternoon around the tasting table.</p>
     </div>
     <div class="experience__grid">
-      <div class="experience-card reveal">
-        <div class="experience-card__icon">🎁</div>
-        <h3>Gift Boxes</h3>
-        <p>Curated gift boxes and seasonal collections for the chocolate lovers in your life.</p>
-        <a href="#faq" class="link-arrow">Learn more →</a>
-      </div>
-      <div class="experience-card reveal">
-        <div class="experience-card__icon">🏢</div>
-        <h3>Corporate Gifting</h3>
-        <p>Premium branded gifting for teams, clients and events — Colombian origin, Swiss-level polish.</p>
-        <a href="#faq" class="link-arrow">Learn more →</a>
-      </div>
-      <div class="experience-card reveal">
-        <div class="experience-card__icon">🍫</div>
-        <h3>Tastings &amp; Workshops</h3>
-        <p>Guided tastings and hands-on workshops exploring Colombian cacao and craft chocolate-making.</p>
-        <a href="#faq" class="link-arrow">Learn more →</a>
-      </div>
+      <article class="experience-card reveal">
+        <div class="experience-card__media">
+          <img src="image-12.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" data-media-image>
+          <span class="experience-card__hint">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 16-4.5-4.5a2 2 0 0 0-2.8 0L5 20"/></svg>
+            <span class="experience-card__hint-file">image-12.jpg</span>
+            <span class="experience-card__hint-desc">Kraft gift boxes tied with twine</span>
+          </span>
+        </div>
+        <div class="experience-card__body">
+          <span class="experience-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="8.5" width="18" height="4" rx="1"/>
+              <path d="M4.8 12.5V19a1.5 1.5 0 0 0 1.5 1.5h11.4a1.5 1.5 0 0 0 1.5-1.5v-6.5"/>
+              <path d="M12 8.5v12"/>
+              <path d="M12 8.5S10.9 3.5 8.5 3.5a2.5 2.5 0 0 0 0 5z"/>
+              <path d="M12 8.5s1.1-5 3.5-5a2.5 2.5 0 0 1 0 5z"/>
+            </svg>
+          </span>
+          <h3>Gift Boxes</h3>
+          <p>Curated gift boxes and seasonal collections for the chocolate lovers in your life.</p>
+          <a href="beyond-the-bar.html#gift-boxes" class="link-arrow link-arrow--light">Gift boxes, sizes and prices <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="experience-card reveal">
+        <div class="experience-card__media">
+          <img src="image-10.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" data-media-image>
+          <span class="experience-card__hint">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 16-4.5-4.5a2 2 0 0 0-2.8 0L5 20"/></svg>
+            <span class="experience-card__hint-file">image-10.jpg</span>
+            <span class="experience-card__hint-desc">Wrapped gifts exchanged at work</span>
+          </span>
+        </div>
+        <div class="experience-card__body">
+          <span class="experience-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 20.5h18"/>
+              <path d="M5 20.5V5.5A1.5 1.5 0 0 1 6.5 4h7A1.5 1.5 0 0 1 15 5.5v15"/>
+              <path d="M15 10h3.5A1.5 1.5 0 0 1 20 11.5v9"/>
+              <path d="M8 8h1.5M8 11.5h1.5M8 15h1.5M11.5 8H13M11.5 11.5H13M11.5 15H13"/>
+            </svg>
+          </span>
+          <h3>Corporate Gifting</h3>
+          <p>Premium branded gifting for teams, clients and events. Colombian origin, Swiss-level polish.</p>
+          <a href="beyond-the-bar.html#corporate-gifting" class="link-arrow link-arrow--light">Volumes, branding and lead times <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+      <article class="experience-card reveal">
+        <div class="experience-card__media">
+          <img src="image-11.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async" data-media-image>
+          <span class="experience-card__hint">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="m21 16-4.5-4.5a2 2 0 0 0-2.8 0L5 20"/></svg>
+            <span class="experience-card__hint-file">image-11.jpg</span>
+            <span class="experience-card__hint-desc">Truffles on a tasting table</span>
+          </span>
+        </div>
+        <div class="experience-card__body">
+          <span class="experience-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3.2c3.6 1.1 5.8 4.3 5.8 8.6s-2.2 7.5-5.8 8.6c-3.6-1.1-5.8-4.3-5.8-8.6S8.4 4.3 12 3.2Z"/>
+              <path d="M12 3.2v17.6"/>
+              <path d="M9.1 7.4c-.5 1.5-.8 3-.8 4.4s.3 2.9.8 4.4"/>
+              <path d="M14.9 7.4c.5 1.5.8 3 .8 4.4s-.3 2.9-.8 4.4"/>
+            </svg>
+          </span>
+          <h3>Tastings &amp; Workshops</h3>
+          <p>Guided tastings and hands-on workshops exploring Colombian cacao and craft chocolate-making.</p>
+          <a href="beyond-the-bar.html#tastings" class="link-arrow link-arrow--light">Formats, prices and booking <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -370,28 +474,103 @@
   </section>
 
   <!-- ============ TESTIMONIALS ============ -->
-  <!-- Placeholder tasting feedback for design/prototype purposes — replace with real customer quotes before launch. -->
+  <!-- Placeholder tasting feedback for design/prototype purposes. Replace with real customer quotes and real ratings before launch. -->
   <section class="testimonials">
     <div class="section-head reveal">
       <p class="eyebrow">Early Tasting Feedback</p>
       <h2>What people are discovering.</h2>
     </div>
     <div class="testimonial-slider reveal" id="testimonialSlider">
-      <div class="testimonial-track" id="testimonialTrack">
-        <blockquote class="testimonial">
-          <p>"Scanning the QR code and seeing the actual farm behind my bar completely changed how I think about chocolate."</p>
-          <cite>— Camila R., Bogotá</cite>
-        </blockquote>
-        <blockquote class="testimonial">
-          <p>"The Intense bar has the deepest, cleanest cacao flavor I've had from a Colombian brand — and the packaging feels genuinely premium."</p>
-          <cite>— Julián M., Medellín</cite>
-        </blockquote>
-        <blockquote class="testimonial">
-          <p>"Origin is unlike anything else on the shelf. Coffee and sea salt with real Colombian cacao — it's a discovery every time."</p>
-          <cite>— Laura T., Chía</cite>
-        </blockquote>
+      <div class="testimonial-viewport">
+        <div class="testimonial-track" id="testimonialTrack">
+
+          <blockquote class="testimonial">
+            <span class="testimonial__stars" role="img" aria-label="Rated 5 out of 5">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3.4 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.8l6-.8Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3.4 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.8l6-.8Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3.4 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.8l6-.8Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3.4 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.8l6-.8Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3.4 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.8l6-.8Z"/></svg>
+            </span>
+            <p>"Scanning the QR code and seeing the actual farm behind my bar completely changed how I think about chocolate."</p>
+            <footer class="testimonial__meta">
+              <cite>Camila R.</cite>
+              <span class="testimonial__place">Bogotá, Colombia</span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial">
+            <span class="testimonial__stars" role="img" aria-label="Rated 5 out of 5">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3.4 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.8l6-.8Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3.4 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.8l6-.8Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3.4 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.8l6-.8Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3.4 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.8l6-.8Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3.4 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.8l6-.8Z"/></svg>
+            </span>
+            <p>"The Intense bar has the deepest, cleanest cacao flavor I've had from a Colombian brand, and the packaging feels genuinely premium."</p>
+            <footer class="testimonial__meta">
+              <cite>Julián M.</cite>
+              <span class="testimonial__place">Medellín, Colombia</span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial">
+            <span class="testimonial__stars" role="img" aria-label="Rated 5 out of 5">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3.4 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.8l6-.8Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3.4 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.8l6-.8Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3.4 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.8l6-.8Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3.4 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.8l6-.8Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3.4 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.8l6-.8Z"/></svg>
+            </span>
+            <p>"Origin is unlike anything else on the shelf. Coffee and sea salt with real Colombian cacao. It's a discovery every time."</p>
+            <footer class="testimonial__meta">
+              <cite>Laura T.</cite>
+              <span class="testimonial__place">Chía, Colombia</span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial">
+            <span class="testimonial__stars" role="img" aria-label="Rated 5 out of 5">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3.4 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.8l6-.8Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3.4 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.8l6-.8Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3.4 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.8l6-.8Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3.4 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.8l6-.8Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3.4 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.8l6-.8Z"/></svg>
+            </span>
+            <p>"I took two bars home as gifts. My sister scanned the wrapper before she even opened it. That is not something a chocolate bar usually makes you do."</p>
+            <footer class="testimonial__meta">
+              <cite>Sofie D.</cite>
+              <span class="testimonial__place">Amsterdam, Netherlands</span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial">
+            <span class="testimonial__stars" role="img" aria-label="Rated 4 out of 5">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3.4 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.8l6-.8Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3.4 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.8l6-.8Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3.4 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.8l6-.8Z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 3.4 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.8l6-.8Z"/></svg>
+              <svg class="is-empty" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="m12 3.4 2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.8l6-.8Z"/></svg>
+            </span>
+            <p>"Signature is the one I keep going back for. It is the only milk chocolate I have found here that does not taste like sugar first. I just wish the bars were easier to find outside the website."</p>
+            <footer class="testimonial__meta">
+              <cite>Andrés V.</cite>
+              <span class="testimonial__place">Medellín, Colombia</span>
+            </footer>
+          </blockquote>
+
+        </div>
       </div>
-      <div class="testimonial-dots" id="testimonialDots"></div>
+
+      <div class="testimonial-controls">
+        <button class="testimonial-nav" id="testimonialPrev" aria-label="Previous review">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+        </button>
+        <div class="testimonial-dots" id="testimonialDots"></div>
+        <button class="testimonial-nav" id="testimonialNext" aria-label="Next review">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+      </div>
     </div>
   </section>
 
@@ -417,16 +596,16 @@
           <span class="accordion__icon"></span>
         </button>
         <div class="accordion__panel">
-          <p>We pair premium Colombian cacao with the precision, texture and restraint associated with Swiss/European chocolate-making — without losing the Colombian identity of the cacao itself.</p>
+          <p>We pair premium Colombian cacao with the precision, texture and restraint associated with Swiss/European chocolate-making, without losing the Colombian identity of the cacao itself.</p>
         </div>
       </div>
       <div class="accordion__item">
         <button class="accordion__trigger" aria-expanded="false">
-          Can I cancel my subscription anytime?
+          Do you offer a subscription?
           <span class="accordion__icon"></span>
         </button>
         <div class="accordion__panel">
-          <p>Yes. The NEVORA Discovery Club can be paused or cancelled at any time from your account — no long-term commitment required.</p>
+          <p>Not yet. We are launching with our three bars at a single price so we can learn which origins people come back for. The Discovery Club opens after our first release, and when it does, you will be able to pause or cancel it at any time.</p>
         </div>
       </div>
       <div class="accordion__item">
@@ -440,6 +619,15 @@
       </div>
       <div class="accordion__item">
         <button class="accordion__trigger" aria-expanded="false">
+          What if my chocolate arrives melted or damaged?
+          <span class="accordion__icon"></span>
+        </button>
+        <div class="accordion__panel">
+          <p>Then it is on us. Send a photo and your order number within 30 days and we will replace it, refund it or issue store credit, whichever you prefer, and we cover the shipping. <a href="warranty.html" class="link-arrow">Read the full promise →</a></p>
+        </div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__trigger" aria-expanded="false">
           Where can I buy NEVORA?
           <span class="accordion__icon"></span>
         </button>
@@ -447,6 +635,44 @@
           <p>NEVORA is available through our online shop, and progressively through select cafés, concept stores, hotels and premium retailers across Colombia.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ============ WARRANTY TEASER ============ -->
+  <section class="promise" id="warranty">
+    <div class="promise__inner">
+      <div class="promise__content reveal">
+        <p class="eyebrow">The NEVORA Promise</p>
+        <h2>Arrives perfect, or we make it right.</h2>
+        <p>Chocolate is fragile and heat-sensitive, and almost anything that goes wrong between our workshop and your door is on us, not on you. If your bar arrives melted, bloomed or damaged, tell us within 30 days and we replace it, refund it or credit it. You never pay the shipping.</p>
+        <a href="warranty.html" class="button button--ghost-dark">Read our full promise →</a>
+      </div>
+      <ul class="promise__facts reveal">
+        <li>
+          <span class="promise__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+          </span>
+          <span><b>30 days</b>To make a claim, counted from delivery</span>
+        </li>
+        <li>
+          <span class="promise__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17.5" cy="18" r="1.8"/></svg>
+          </span>
+          <span><b>We pay</b>Return and reshipping costs are always ours</span>
+        </li>
+        <li>
+          <span class="promise__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.2l3.3 2"/></svg>
+          </span>
+          <span><b>5 days</b>From approved claim to resolution</span>
+        </li>
+        <li>
+          <span class="promise__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3.5 12a8.5 8.5 0 0 1 14.4-6.1L21 8"/><path d="M21 3.5V8h-4.5"/><path d="M20.5 12a8.5 8.5 0 0 1-14.4 6.1L3 16"/><path d="M3 20.5V16h4.5"/></svg>
+          </span>
+          <span><b>Your choice</b>Replacement, refund or store credit</span>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -472,8 +698,8 @@
   <div class="footer__grid">
     <div class="footer__brand">
       <a href="#top" class="nav__logo nav__logo--footer">
-        <img src="logo.png" alt="NEVORA" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-flex';">
-        <span class="nav__logo-fallback">NEVORA</span>
+        <img src="logo-white.png" alt="" onerror="this.remove();">
+        <span class="nav__logo-word">NEVORA</span>
       </a>
       <p>Premium Colombian chocolate, crafted with Swiss-inspired precision.</p>
       <div class="footer__social" aria-label="Social media">
@@ -498,14 +724,15 @@
       <h4>Company</h4>
       <a href="#story">Our Story</a>
       <a href="#traceability">Traceability</a>
-      <a href="#experience">Gifting &amp; Events</a>
+      <a href="beyond-the-bar.html">Gifting &amp; Events</a>
+      <a href="warranty.html">Our Promise &amp; Warranty</a>
       <a href="#faq">FAQ</a>
     </div>
 
     <div class="footer__col">
       <h4>Contact</h4>
-      <a href="mailto:hello@nevorachocolate.com">hello@nevorachocolate.com</a>
-      <a href="#experience">Corporate &amp; Wholesale</a>
+      <a href="mailto:contact@nevora.com">contact@nevora.com</a>
+      <a href="beyond-the-bar.html#corporate-gifting">Corporate &amp; Wholesale</a>
       <span class="footer__note">Bogotá, Colombia</span>
     </div>
   </div>
@@ -523,8 +750,8 @@
     <button class="modal__close" data-modal-close aria-label="Close">&times;</button>
     <p class="eyebrow">Added to Bag</p>
     <h3 id="bagModalTitle">NEVORA <span id="bagModalFlavor">Signature</span></h3>
-    <p>80g bar · COP $27,900</p>
-    <p class="modal__note">This is a front-end prototype — no payment has been processed. Your bag currently holds <strong id="bagModalCount">1</strong> item(s).</p>
+    <p>80g bar · COP $18,500</p>
+    <p class="modal__note">This is a front-end prototype. No payment has been processed. Your bag currently holds <strong id="bagModalCount">1</strong> item(s).</p>
     <div class="modal__actions">
       <button class="button button--ghost-dark" data-modal-close>Continue Browsing</button>
       <a href="#chocolate" class="button button--primary" data-modal-close>View Collection</a>

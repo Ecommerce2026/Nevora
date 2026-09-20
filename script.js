@@ -144,9 +144,9 @@ document.addEventListener('DOMContentLoaded', function () {
   var flavorPlaceholderDesc = document.getElementById('flavorPlaceholderDesc');
 
   var flavorMeta = {
-    signature: { file: 'image-4.jpg', desc: 'NEVORA Signature — classic Swiss-style milk chocolate bar' },
+    signature: { file: 'milk-cocolate.png', desc: 'NEVORA Signature — classic Swiss-style milk chocolate bar' },
     intense: { file: 'image-5.png', desc: 'NEVORA Intense — 70% Colombian dark chocolate bar' },
-    origin: { file: 'image-6.jpg', desc: 'NEVORA Origin — coffee and sea salt chocolate bar' }
+    origin: { file: 'sea salt choco.png', desc: 'NEVORA Origin — coffee and sea salt chocolate bar' }
   };
 
   function setFlavor(name) {
@@ -251,6 +251,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var slider = document.getElementById('testimonialSlider');
     slider.addEventListener('mouseenter', function () { clearInterval(autoplay); });
+
+    /* Manual navigation — stops the autoplay so the slide does not jump away
+       from whatever the visitor just chose to look at. */
+    function step(delta) {
+      clearInterval(autoplay);
+      goToSlide((current + delta + slides.length) % slides.length);
+    }
+    var prevBtn = document.getElementById('testimonialPrev');
+    var nextBtn = document.getElementById('testimonialNext');
+    if (prevBtn) prevBtn.addEventListener('click', function () { step(-1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { step(1); });
+
+    slider.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { step(-1); }
+      if (e.key === 'ArrowRight') { step(1); }
+    });
   }
 
   /* ---------- Add to Bag modal ---------- */

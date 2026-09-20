@@ -1,0 +1,22 @@
+# Course material and internal documents - never publish these
+*.pdf
+launch-lab.html
+launch-lab.OLD-brug-ikke.html.bak
+business-model-canvas-en (1).html
+
+# Backups and scratch files
+*.backup.html
+*.backup.css
+*.bak
+_p1.html
+_p2.html
+_p3.html
+u1.html
+
+# Build output (the site is served from the repo root)
+dist/
+
+# OS noise
+Thumbs.db
+desktop.ini
+.DS_Store
